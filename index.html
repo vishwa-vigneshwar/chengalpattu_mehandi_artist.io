@@ -119,6 +119,9 @@
         .contact a.whatsapp {
             background: linear-gradient(45deg, #25D366, #128C7E);
         }
+        .contact a.facebook {
+            background: linear-gradient(45deg, #3b5998, #8b9dc3);
+        }
         .contact a:hover {
             transform: scale(1.1) rotate(5deg);
         }
@@ -201,7 +204,7 @@
         <img src="img (6).png" alt="Mehndi Design 6" onclick="openModal(this.src)">
     </section>
 
-    <div class="image-modal" id="imageModal">
+    <div class="image-modal" id="imageModal" onmouseleave="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
         <img id="modalImage" src="" alt="">
     </div>
@@ -211,11 +214,14 @@
         <a href="https://instagram.com/chengalpattu_mehandi" target="_blank" class="instagram">
             <span>Instagram</span>
         </a>
-        <a href="https://youtube.com/chengalpattu_mehandi" target="_blank" class="youtube">
+        <a href="https://www.youtube.com/@Chengalpattu_Mehandi_artist" target="_blank" class="youtube">
             <span>YouTube</span>
         </a>
         <a href="https://wa.me/1234567890" target="_blank" class="whatsapp">
             <span>WhatsApp</span>
+        </a>
+        <a href="https://facebook.com/chengalpattu_mehandi" target="_blank" class="facebook">
+            <span>Facebook</span>
         </a>
     </section>
 
@@ -235,6 +241,17 @@
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
         }
+
+        // Close modal after 3 seconds of inactivity in the image modal
+        let modalTimeout;
+        document.getElementById('imageModal').addEventListener('mouseenter', function() {
+            clearTimeout(modalTimeout);
+        });
+
+        document.getElementById('imageModal').addEventListener('mouseleave', function() {
+            modalTimeout = setTimeout(closeModal, 3000); // Auto-close after 3 seconds
+        });
     </script>
 </body>
 </html>
+
