@@ -9,14 +9,14 @@
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #f1c6d7, #f4e1e1);
+            background: linear-gradient(to bottom, #ffefba, #ffc3a0);
             color: #4d2c2c;
             overflow-x: hidden;
         }
         header {
-            background: linear-gradient(45deg, #ff9a9e, #ffb6c1);
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
             color: white;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             animation: slide-in 1s ease-out;
         }
@@ -48,12 +48,12 @@
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transform: scale(1);
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
         .gallery img:hover {
-            transform: scale(1.5); /* Increase scale for full-screen effect */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
         .image-modal {
             display: none;
@@ -83,8 +83,8 @@
         }
         .contact {
             text-align: center;
-            padding: 30px;
-            background-color: #f7d1d1;
+            padding: 20px;
+            background-color: #fff7e6;
             animation: pop-in 1.5s ease-out;
         }
         @keyframes pop-in {
@@ -121,7 +121,6 @@
         }
         .contact a:hover {
             transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         footer {
             text-align: center;
@@ -145,7 +144,6 @@
             height: 50px;
             background: rgba(255, 182, 193, 0.7);
             animation: float 5s infinite ease-in-out;
-            border-radius: 50%;
         }
         .floating-elements span:nth-child(1) {
             left: 10%;
@@ -195,23 +193,28 @@
     </header>
 
     <section class="gallery">
-        <img src="https://via.placeholder.com/300x300/FFC0CB/FFFFFF?text=Mehndi+Design+1" alt="Mehndi Design 1">
-        <img src="https://via.placeholder.com/300x300/FFB6C1/FFFFFF?text=Mehndi+Design+2" alt="Mehndi Design 2">
-        <img src="https://via.placeholder.com/300x300/FF69B4/FFFFFF?text=Mehndi+Design+3" alt="Mehndi Design 3">
-        <img src="https://via.placeholder.com/300x300/FF1493/FFFFFF?text=Mehndi+Design+4" alt="Mehndi Design 4">
-        <img src="https://via.placeholder.com/300x300/DB7093/FFFFFF?text=Mehndi+Design+5" alt="Mehndi Design 5">
-        <img src="https://via.placeholder.com/300x300/C71585/FFFFFF?text=Mehndi+Design+6" alt="Mehndi Design 6">
+        <img src="img (1).png" alt="Mehndi Design 1" onclick="openModal(this.src)">
+        <img src="img (2).png" alt="Mehndi Design 2" onclick="openModal(this.src)">
+        <img src="img (3).png" alt="Mehndi Design 3" onclick="openModal(this.src)">
+        <img src="img (4).png" alt="Mehndi Design 4" onclick="openModal(this.src)">
+        <img src="img (5).png" alt="Mehndi Design 5" onclick="openModal(this.src)">
+        <img src="img (6).png" alt="Mehndi Design 6" onclick="openModal(this.src)">
     </section>
+
+    <div class="image-modal" id="imageModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+    </div>
 
     <section class="contact">
         <h2>Connect with Us</h2>
-        <a href="https://www.instagram.com/chengalpattu_mehandi_artist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram">
+        <a href="https://instagram.com/chengalpattu_mehandi" target="_blank" class="instagram">
             <span>Instagram</span>
         </a>
         <a href="https://youtube.com/chengalpattu_mehandi" target="_blank" class="youtube">
             <span>YouTube</span>
         </a>
-        <a href="https://wa.me/9345388120" target="_blank" class="whatsapp">
+        <a href="https://wa.me/1234567890" target="_blank" class="whatsapp">
             <span>WhatsApp</span>
         </a>
     </section>
@@ -221,7 +224,17 @@
     </footer>
 
     <script>
-        // Optional: Add image zoom on hover functionality (if needed)
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
     </script>
 </body>
 </html>
