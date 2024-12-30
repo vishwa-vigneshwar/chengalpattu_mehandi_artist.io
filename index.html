@@ -96,9 +96,20 @@
             top: 20px;
             right: 20px;
             color: white;
-            font-size: 24px;
+            font-size: 30px; /* Increased font size */
             font-weight: bold;
             cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.7); /* Background color for visibility */
+            border-radius: 10px;
+            padding: 20px 40px; /* Increased button size */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .image-modal .close:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+            transform: scale(1.1); /* Slight scale effect on hover */
+        }
+        .image-modal .close span {
+            font-size: 20px; /* Adjusted font size for the label */
         }
         .contact {
             text-align: center;
@@ -224,7 +235,9 @@
     </section>
 
     <div class="image-modal" id="imageModal" onmouseleave="closeModal()">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal()">
+            <span>Close</span>
+        </span>
         <img id="modalImage" src="" alt="">
     </div>
 
